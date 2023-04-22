@@ -1,0 +1,18 @@
+[package]
+name = "hamming_code_labs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate_type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "labs"
+path = "src/main.rs"
+
+[dependencies]
+rand = "0.8.5"
+colored = "2.0.0"
+thiserror = "1.0.40"
