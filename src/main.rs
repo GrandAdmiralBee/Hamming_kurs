@@ -1,13 +1,16 @@
-use hamming_code_labs::hamessage::HammingMessage;
-use hamming_code_labs::bitvec::{BitVec, bitvec};
-use hamming_code_labs::HammingType;
+use hamming_code_labs::bitvec::{bitvec, BitVec};
 use hamming_code_labs::channel::Channel;
+use hamming_code_labs::hamessage::HammingMessage;
+use hamming_code_labs::HammingType;
+use std::collections::VecDeque;
 
 fn main() {
     let mut channel = Channel::new();
 
     //Кодирование блочным кодом хэмминга
-    let data = BitVec::from_str("And dreadfully distinct. Against the dark, a tall white fountain played.");
+    let data = BitVec::from_str(
+        "And dreadfully distinct. Against the dark, a tall white fountain played.",
+    );
     let message = HammingMessage::new(&data, HammingType::Block);
     channel.add_packet(message);
 
